@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me - Shambhawi Shukla</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #000;
+      color: #fff;
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .nav a.active {
+      color: #ff6600;
+    }
+
+    /* Wrapper for side images */
+    .contact-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 100px 0;
+    }
+
+    /* Left Image */
+    .contact-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background: url('images/left-side.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.8;
+    }
+
+    /* Right Image */
+    .contact-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      background: url('images/right-side.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.8;
+    }
+/* Left Image */
+.contact-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: url('images/left-side.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.9;
+  box-shadow: 0 0 30px 8px #ff6600; /* orange glow */
+}
+
+/* Right Image */
+.contact-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: url('images/right-side.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.9;
+  box-shadow: 0 0 30px 8px #ff6600; /* orange glow */
+}
+/* Contact form container */
+.contact {
+  position: relative;
+  background: rgba(20,20,20,0.9);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  z-index: 1;
+
+  /* Softer Glow effect */
+  box-shadow: 0 0 30px 5px rgba(255, 102, 0, 0.5); /* orange with 50% opacity */
+  transition: box-shadow 0.5s ease-in-out;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+/* Pulse animation for the glow */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 20px 5px rgba(255, 102, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px 10px rgba(255, 102, 0, 0.2);
+  }
+  10% {
+    box-shadow: 0 0 20px 5px rgba(255, 102, 0, 0.4);
+  }
+}
+
+    /* Contact form container */
+    .contact {
+      position: relative;
+      background: rgba(20,20,20,0.9);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      color: #fff;
+      z-index: 1;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .contact .btn {
+      padding: 12px 25px;
+      background: #ff6600;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact .btn:hover {
+      background: #000;
+      color: #ff6600;
+    }
+
+    /* Popup styling */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #222;
+      color: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      z-index: 9999;
+      display: none;
+      animation: drop 0.4s ease;
+    }
+
+    @keyframes drop {
+      0% { transform: translate(-50%, -150%); opacity: 0; }
+      100% { transform: translate(-50%, -50%); opacity: 1; }
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Shambhawi Shukla</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about me.html">About</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section with wrapper -->
+  <div class="contact-wrapper">
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <p>Have a project, idea, or just want to say hello? Send me a message!</p>
+
+      <form id="contactForm" action="https://formsubmit.co/shambhawishukla1020@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Contact Form Entry from Portfolio">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">✅ Message Sent!</div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Shambhawi Shukla. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const popup = document.getElementById("popup");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent default submission
+      popup.style.display = "block";
+
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: formData
+      }).then(response => {
+        // form submitted
+      }).catch(error => {
+        console.error("Form submission error:", error);
+      });
+
+      // Clicking anywhere closes popup
+      document.addEventListener("click", closePopup);
+    });
+
+    function closePopup() {
+      popup.style.display = "none";
+      document.removeEventListener("click", closePopup);
+      form.reset();
+    }
+  </script>
+</body>
+</html>
+

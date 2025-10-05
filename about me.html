@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Shambhawi Shukla</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #000;
+      color: #fff;
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .nav a.active {
+      color: #ff6600;
+    }
+
+    /* Wrapper for side images */
+    .about-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 100px 0;
+    }
+
+    /* Left Image with orange glow */
+    .about-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      background: url('images/left-side.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.8;
+      box-shadow: 0 0 30px 8px rgba(255,102,0,0.5); /* orange glow */
+    }
+
+    /* Right Image with orange glow */
+    .about-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background: url('images/right-side.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.8;
+      box-shadow: 0 0 30px 8px rgba(255,102,0,0.5); /* orange glow */
+    }
+
+    /* About Box */
+    .about-container {
+      position: relative;
+      background: rgba(20,20,20,0.9);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 90%;
+      color: #fff;
+      z-index: 1;
+    }
+
+    .profile-photo img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px auto;
+      border: 3px solid #ff6600;
+    }
+
+    .about-info h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .about-info h3 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #ff6600;
+    }
+
+    .about-info .tagline {
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .about-info p {
+      line-height: 1.6;
+    }
+
+    .about-info .contact-info p {
+      margin: 5px 0;
+    }
+
+    .about-info a.btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto 0 auto;
+      padding: 12px 25px;
+      background: #ff6600;
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Shambhawi Shukla</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about me.html" class="active">About</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <div class="about-wrapper">
+    <section class="about-container">
+      <div class="profile-photo">
+        <img src="C:\Users\HP\Desktop\portfolio\2\images\profile pic.png" alt="Shambhawi Shukla">
+      </div>
+      <div class="about-info">
+        <h1>Shambhawi Shukla</h1>
+        <h3>Filmmaker & Visual Storyteller</h3>
+        <p class="tagline">Exploring the delicate rhythm between light, emotion, and human stories.</p>
+        <p>
+          I am passionate about blending storytelling, design, and cinematic 
+          aesthetics to craft unique experiences. With expertise across visual 
+          communication, branding, and experimental projects, I aim to inspire 
+          and evoke emotions through every piece of work.
+        </p>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <p><strong>Email:</strong> <a href="mailto:shambhawishukla1020@gmail.com">shambhawishukla1020@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+918827799419">+91 88277 99419</a></p>
+          <p><strong>Behance:</strong> <a href="https://www.behance.net/5791281fsam" target="_blank">behance.net/5791281fsam</a></p>
+        </div>
+
+        <a href="C:\Users\HP\Desktop\portfolio\2\images\Resume.pdf" class="btn" target="_blank">View Resume</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Shambhawi Shukla. All rights reserved.</p>
+  </footer>
+</body>
+</html>
