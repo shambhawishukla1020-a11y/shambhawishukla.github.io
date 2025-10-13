@@ -43,6 +43,44 @@
       text-align: center;
       z-index: 1;
     }
+
+    /* POP + SHIMMER GLOW animation */
+    h1 {
+      display: inline-block;
+      font-size: 3.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0);
+    }
+
+    h1 span {
+      display: inline-block;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    h1:hover span,
+    h1:active span {
+      transform: scale(1.15);
+      animation: glowPulse 1.8s ease-in-out infinite alternate;
+    }
+
+    h1:hover,
+    h1:active {
+      transform: scale(1.1);
+    }
+
+    @keyframes glowPulse {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 153, 0, 0.3),
+                     0 0 20px rgba(255, 153, 0, 0.2),
+                     0 0 30px rgba(255, 153, 0, 0.1);
+      }
+      100% {
+        text-shadow: 0 0 25px rgba(255, 153, 0, 0.8),
+                     0 0 40px rgba(255, 153, 0, 0.6),
+                     0 0 60px rgba(255, 153, 0, 0.4);
+      }
+    }
   </style>
 </head> 
 <body> 
@@ -79,5 +117,4 @@
   </footer> 
 </body> 
 </html>
-
 
