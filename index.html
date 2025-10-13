@@ -6,7 +6,7 @@
   <title>Shambhawi Shukla - Portfolio</title> 
   <link rel="stylesheet" href="style.css"> 
   <style>
-    /* Make video fill the hero background */
+    /* Hero section styling */
     .hero {
       position: relative;
       height: 100vh;
@@ -27,14 +27,14 @@
       z-index: -2;
       transform: translate(-50%, -50%);
       object-fit: cover;
-      opacity: 0.6; /* reduced opacity */
+      opacity: 0.6;
     }
 
     .hero-overlay {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.3); /* subtle overlay */
+      background: rgba(0,0,0,0.3);
       z-index: -1;
     }
 
@@ -44,28 +44,29 @@
       z-index: 1;
     }
 
-    /* POP + SHIMMER GLOW animation */
-    h1 {
+    /* Glowing + pop animation for full name */
+    .glow-name {
       display: inline-block;
       font-size: 3.5rem;
       cursor: pointer;
       transition: transform 0.3s ease;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0);
+      text-decoration: none;
+      color: #fff;
     }
 
-    h1 span {
+    .glow-name span {
       display: inline-block;
       transition: transform 0.3s ease, text-shadow 0.3s ease;
     }
 
-    h1:hover span,
-    h1:active span {
+    .glow-name:hover span,
+    .glow-name:active span {
       transform: scale(1.15);
       animation: glowPulse 1.8s ease-in-out infinite alternate;
     }
 
-    h1:hover,
-    h1:active {
+    .glow-name:hover,
+    .glow-name:active {
       transform: scale(1.1);
     }
 
@@ -97,7 +98,6 @@
 
   <!-- Hero -->
   <section class="hero">
-    <!-- Background Video -->
     <video autoplay muted loop playsinline>
       <source src="images/bg.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -105,7 +105,11 @@
 
     <div class="hero-overlay"></div> 
     <div class="hero-content"> 
-      <h1><span>Shambhawi</span> Shukla</h1> 
+      <h1>
+        <a href="about me.html" class="glow-name">
+          <span>Shambhawi</span> <span>Shukla</span>
+        </a>
+      </h1> 
       <p>Cinematic Designer & Storyteller</p>
       <a href="project.html" class="btn">Explore My Work</a> 
     </div>
