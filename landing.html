@@ -22,7 +22,8 @@
       height: 100%;
       background: url('images/landing.jpg') no-repeat center center/cover;
       cursor: pointer;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.8s ease, transform 4s ease;
+      animation: zoomIn 8s ease-in-out infinite alternate;
     }
 
     .landing-image::after {
@@ -30,7 +31,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
     }
 
     .landing-text {
@@ -39,27 +40,39 @@
       font-size: 2rem;
       text-align: center;
       z-index: 2;
-      text-shadow: 0 0 15px rgba(255, 153, 0, 0.8);
+      text-shadow: 0 0 20px rgba(255, 153, 0, 0.8);
+      font-family: 'Poppins', sans-serif;
     }
 
     .fade-out {
       opacity: 0;
     }
+
+    @keyframes zoomIn {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
   </style>
 </head>
 <body>
   <div class="landing-image" id="landing">
-    <div class="landing-text">Click to Enter</div>
+    <div class="landing-text">Scroll or Click to Enter</div>
   </div>
 
   <script>
-    document.getElementById("landing").addEventListener("click", () => {
-      const img = document.getElementById("landing");
-      img.classList.add("fade-out");
+    const landing = document.getElementById("landing");
+
+    function goToMain() {
+      landing.classList.add("fade-out");
       setTimeout(() => {
-        window.location.href = "index.html"; // Go to main portfolio page
-      }, 600);
-    });
+        window.location.href = "index.html";
+      }, 800);
+    }
+
+    landing.addEventListener("click", goToMain);
+    window.addEventListener("wheel", goToMain, { once: true });
+    window.addEventListener("touchmove", goToMain, { once: true });
   </script>
 </body>
 </html>
+
