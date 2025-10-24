@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome - Shambhawi Shukla</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shambhawi’s Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -11,229 +11,156 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background-color: #000;
-      color: #fff;
       font-family: 'Poppins', sans-serif;
+      background-color: #000;
       overflow-x: hidden;
+      color: lightgrey;
     }
 
-    /* --- HERO SECTION (VIVIEN’S STYLE) --- */
-    .hero {
-      position: relative;
+    /* HERO SECTION */
+    .landing {
       height: 100vh;
-      width: 100%;
       background: url('images/landing.JPG') no-repeat center center/cover;
+      position: relative;
       display: flex;
-      flex-direction: column;
+      align-items: flex-end;
       justify-content: center;
-      align-items: center;
       text-align: center;
-      animation: zoomIn 12s ease-in-out infinite alternate;
-      overflow: hidden;
     }
 
-    .hero::after {
+    .landing::after {
       content: '';
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      inset: 0;
       background: rgba(0, 0, 0, 0.45);
     }
 
-    .hero-content {
+    .landing-text {
       position: relative;
       z-index: 2;
+      margin-bottom: 8%;
     }
 
-    .hero h1 {
-      font-size: 10rem;
-      color: orange;
+    .landing-text h1 {
+      font-size: 8rem;
       font-weight: 900;
+      color: lightgrey;
+      text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
       letter-spacing: 3px;
-      text-shadow: 0 0 40px rgba(255,153,0,1);
-      animation: fadeSlideDown 2s ease forwards;
     }
 
-    .hero p {
+    .landing-text p {
       font-size: 3rem;
-      color: #fff;
       font-weight: 600;
+      color: lightgrey;
+      letter-spacing: 2px;
       margin-top: 10px;
-      letter-spacing: 2px;
-      opacity: 0;
-      animation: fadeSlideUp 2.5s ease forwards;
-      animation-delay: 0.8s;
     }
 
-    @keyframes zoomIn {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
-    }
-
-    @keyframes fadeSlideDown {
-      0% { opacity: 0; transform: translateY(-40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeSlideUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    /* --- GALLERY SECTION (COSMOS STYLE) --- */
-    .gallery {
+    /* COSMOS SECTION */
+    .cosmos {
       position: relative;
-      background-color: #000;
-      padding: 120px 0;
+      height: 120vh;
       overflow: hidden;
-      transition: background 1s ease;
+      background: radial-gradient(ellipse at center, #000 60%, #020202 100%);
     }
 
-    .gallery h2 {
-      text-align: center;
-      color: orange;
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 80px;
-      letter-spacing: 2px;
-      text-shadow: 0 0 20px rgba(255,153,0,0.7);
-      animation: fadeInTitle 1.5s ease forwards;
-    }
-
-    @keyframes fadeInTitle {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 40px;
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 0 40px rgba(255,255,255,0.05);
-      transition: transform 1s ease, opacity 1s ease;
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(80px);
-    }
-
-    .gallery-item.show {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 1.2s ease-out;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 3s ease;
-      filter: brightness(0.85);
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.1);
-      filter: brightness(1);
-    }
-
-    .gallery-item::after {
-      content: '';
+    .cosmos h2 {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 6rem;
+      font-weight: 900;
+      color: lightgrey;
+      text-shadow: 0 0 30px rgba(255, 153, 0, 0.8);
+      z-index: 5;
+      animation: glow 3s infinite alternate;
     }
 
-    /* --- SCROLL TRANSITION EFFECTS --- */
-    section {
+    @keyframes glow {
+      from { text-shadow: 0 0 15px rgba(255, 153, 0, 0.4); }
+      to { text-shadow: 0 0 40px rgba(255, 153, 0, 1); }
+    }
+
+    .cosmos img {
+      position: absolute;
+      border-radius: 20px;
+      opacity: 0.85;
+      cursor: pointer;
+      transition: transform 1.5s ease, opacity 0.5s ease;
+      animation: drift 10s infinite ease-in-out alternate;
+    }
+
+    @keyframes drift {
+      from { transform: translateY(0px) rotate(0deg); }
+      to { transform: translateY(15px) rotate(2deg); }
+    }
+
+    .cosmos img:hover {
       opacity: 1;
-      transition: opacity 1s ease;
+      transform: scale(1.05);
     }
 
-    section.fade-out {
-      opacity: 0;
+    /* STAR DOTS */
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 3s infinite ease-in-out alternate;
     }
 
-    /* --- FOOTER --- */
-    footer {
-      text-align: center;
-      color: #777;
-      padding: 40px 0;
-      font-size: 1rem;
-      letter-spacing: 1px;
+    @keyframes twinkle {
+      from { opacity: 0.2; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1.2); }
     }
   </style>
 </head>
 <body>
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1>WELCOME</h1>
-      <p>TO MY PORTFOLIO</p>
+  <section class="landing">
+    <div class="landing-text">
+      <h1>SHAMBHAWI’S</h1>
+      <p>PORTFOLIO</p>
     </div>
   </section>
 
-  <!-- GALLERY SECTION -->
-  <section class="gallery" id="gallery">
-    <h2>EXPLORE MY WORK</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="images/gallery1.jpg" alt="Work 1"></div>
-      <div class="gallery-item"><img src="images/gallery2.jpg" alt="Work 2"></div>
-      <div class="gallery-item"><img src="images/gallery3.jpg" alt="Work 3"></div>
-      <div class="gallery-item"><img src="images/gallery4.jpg" alt="Work 4"></div>
-    </div>
-  </section>
+  <section class="cosmos" id="cosmos">
+    <h2>MY WORLD</h2>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Shambhawi Shukla | All Rights Reserved
-  </footer>
+    <!-- 9 Randomly scattered images -->
+    <img src="images/star1.jpg" style="top:10%; left:20%; width:200px;">
+    <img src="images/star2.jpg" style="top:5%; right:10%; width:300px;">
+    <img src="images/star3.jpg" style="top:30%; left:5%; width:250px;">
+    <img src="images/star4.jpg" style="top:25%; right:25%; width:220px;">
+    <img src="images/star5.jpg" style="bottom:15%; left:15%; width:280px;">
+    <img src="images/star6.jpg" style="bottom:5%; right:20%; width:260px;">
+    <img src="images/star7.jpg" style="top:50%; left:35%; width:240px;">
+    <img src="images/star8.jpg" style="bottom:25%; right:5%; width:230px;">
+    <img src="images/star9.jpg" style="bottom:30%; left:50%; width:270px;">
+     <img src="images/star10.jpg" style="bottom:40%; left:40%; width:220px;">
+  </section>
 
   <script>
-    // Smooth reveal on scroll
-    const items = document.querySelectorAll('.gallery-item');
-
-    function revealOnScroll() {
-      const triggerBottom = window.innerHeight * 0.85;
-      items.forEach(item => {
-        const boxTop = item.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) item.classList.add('show');
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-
-    // Fade out + redirect on click (both hero scroll and gallery click)
-    function redirectToHome() {
-      document.body.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = 'home.html';
-      }, 1000);
+    // Add random stars
+    const cosmos = document.getElementById('cosmos');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      const size = Math.random() * 3 + 1;
+      star.classList.add('star');
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 3}s`;
+      cosmos.appendChild(star);
     }
 
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', redirectToHome);
-    });
-
-    // Optional: clicking anywhere on hero also scrolls to gallery smoothly
-    document.getElementById('hero').addEventListener('click', () => {
-      document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+    // Click anywhere in cosmos -> go to home.html
+    cosmos.addEventListener('click', () => {
+      window.location.href = 'home.html';
     });
   </script>
-
 </body>
 </html>
-
